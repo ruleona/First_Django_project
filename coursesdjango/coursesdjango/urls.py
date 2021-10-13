@@ -15,13 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path, include
-# from lesson_two import views
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     # path(r'lesson_two/', include('lesson_two.urls')),
-    path(r'items/', include('lesson_one.urls')),
-    path(r'', include('lesson_one.urls')),
+    path('items', include('lesson_one.urls')),
+    path('about', include('lesson_one.urls')),
     path('admin/', admin.site.urls),
-    re_path('^item/*', include('lesson_one.urls'))
+    re_path(r'^item/*', include('lesson_one.urls')),
+    path('lesson_one', include('lesson_one.urls')),
+    path('book', include('lesson_one.urls')),
+    path(r'', include('lesson_one.urls')),
     # path(r'', views.home),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

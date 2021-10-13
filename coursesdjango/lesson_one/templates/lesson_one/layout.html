@@ -1,11 +1,30 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'lesson_one/css/lesson_one.css' %}">
+<!--    Ссылка на сайт ниже-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/...">
+<!--    <script src="https://kit.fontawesome.com/4c5040dbc2.js" crossorigin="anonymous"></script>-->
 </head>
 <body>
-    {% block content %}
-    {% endblock %}
+    <aside>
+        <img class="logopic" src="{% static 'lesson_one/img/cubes-solid.svg' %}" alt="Лого">
+        <span class="logo">Moiseeva E.</span>
+        <h3>Навигация</h3>
+        <ul>
+            <a href="{% url 'home' %}"><li><img src="{% static 'lesson_one/img/home-solid.svg' %}" alt="Домашняя страница">Главная</li></a>
+            <a href="{% url 'about' %}"><li><img src="{% static 'lesson_one/img/book-open-solid.svg' %}" alt="Обо мне">Обо мне</li></a>
+            <a href=""><li><img src="{% static 'lesson_one/img/paper-plane-solid.svg' %}" alt="Обо мне">Контакты</li></a>
+        </ul>
+    </aside>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
 </body>
 </html>
