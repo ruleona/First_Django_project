@@ -7,5 +7,3 @@ from django.http import HttpResponse
 def show(request):
     return HttpResponse('Урок номер два.')
 
-def items(request):
-    return HttpResponse('Вы перешли в раздел items')

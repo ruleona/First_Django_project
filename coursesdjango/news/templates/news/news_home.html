@@ -1,0 +1,19 @@
+{% extends 'lesson_one/layout.html' %}
+
+{% block title %}Новости на сайте{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Новости на сайте</h1>
+        {% if news %}
+            {% for el in news %}
+                <div class="alert alert-warning">
+                    <h3>{{ el.title }}</h3>
+                    <p>{{ el.anons }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Пока нет новостей!</p>
+        {% endif %}
+    </div>
+{% endblock %}

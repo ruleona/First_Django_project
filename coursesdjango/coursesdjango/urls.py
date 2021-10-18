@@ -20,13 +20,7 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-    # path(r'lesson_two/', include('lesson_two.urls')),
-    path('items', include('lesson_one.urls')),
-    path('about', include('lesson_one.urls')),
     path('admin/', admin.site.urls),
-    re_path(r'^item/*', include('lesson_one.urls')),
-    path('lesson_one', include('lesson_one.urls')),
-    path('book', include('lesson_one.urls')),
-    path(r'', include('lesson_one.urls')),
-    # path(r'', views.home),
+    path('', include('lesson_one.urls')),
+    path('news/', include('news.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
