@@ -6,10 +6,9 @@ body {
 }
 
 aside {
-    position: sticky;
-    float: left;
+    position: fixed;
     background: #4E4E4E;
-    width: 20%;
+    width: 250px;
     padding: 2.5%;
     height: 100vh;
     color: #fff;
@@ -84,12 +83,20 @@ aside ul li button i  {
 
 }
 
+main {
+    display: flex;
+    margin-left: 250px;
+    justify-content: center;
+        height: 100%;
+}
+
 main .features {
-    float: left;
     color: #fff;
-    margin-top: 100px;
     text-align: center;
-    width: 75%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 main .features h1 {
@@ -101,10 +108,7 @@ main .features h1 {
 main .features p {max-width: 400px; margin: 20px auto}
 
 .alert-warning {
-    float: left;
-    clear: both;
     width: 400px;
-    margin: 20px 34%;
     text-align: left;
 }
 
@@ -113,3 +117,17 @@ form {
     width: 500px;
     margin-top: 50px;
 }
+
+.main-page {
+        color: var(--bs-body-bg);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 500px;}
+
+.aux-center {
+    display: flex;
+    height: 100%;
+    align-items: center;
+
+    }
