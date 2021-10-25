@@ -1,2 +1,5 @@
-# First_Django_project
-This is my first Django app.
+Для запуска проекта на вашем компьютере, необходимо:
+1) Клонировать репозиторий
+2) Переключиться на ветку master
+3) Зайти в папку coursesdjango и активировать виртуальное окружение:  Scripts > activate
+4) Затем выйти из папки Scripts и выполнить команду в консоли: python manage.py runserver
