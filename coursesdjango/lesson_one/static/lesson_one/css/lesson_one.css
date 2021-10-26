@@ -131,3 +131,12 @@ form {
     align-items: center;
 
     }
+
+.contacts-page {
+    color: #fff;
+}
+
+.contacts-page a {
+    color: #fff;
+    text-decoration: none
+}
