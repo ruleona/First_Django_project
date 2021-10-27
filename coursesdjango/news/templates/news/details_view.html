@@ -3,11 +3,20 @@
 {% block title %}{{ article.title }}{% endblock %}
 
 {% block content %}
-    <div class="features">
-        <h1>{{ article.title }}</h1>
-        <p>{{ article.date }}</p>
-        <p>{{ article.full_text }}</p>
-        <a href="{% url 'news-update' article.id %}" class="btn btn-info">Редактировать</a>
+<div class="card news-card">
+    <h5 class="card-header">{{ article.title }}</h5>
+    <div class="card-body">
+        <h5 class="card-title">{{ article.date }}</h5><br>
+        <p class="card-text">{{ article.full_text }}</p>
+        <a href="{% url 'news-update' article.id %}" class="btn btn-info">Редактировать</a><br>
         <a href="{% url 'news-delete' article.id %}" class="btn btn-danger">Удалить</a>
     </div>
+</div>
+<!--    <div class="features">-->
+<!--        <h1>{{ article.title }}</h1>-->
+<!--        <p>{{ article.date }}</p>-->
+<!--        <p>{{ article.full_text }}</p>-->
+<!--        <a href="{% url 'news-update' article.id %}" class="btn btn-info">Редактировать</a>-->
+<!--        <a href="{% url 'news-delete' article.id %}" class="btn btn-danger">Удалить</a>-->
+<!--    </div>-->
 {% endblock %}
