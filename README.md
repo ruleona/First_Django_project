@@ -9,8 +9,7 @@ git checkout master
 ```
 3. Зайти в папку coursesdjango и активировать виртуальное окружение.
 ``` bash
-cd ./Scripts
-activate
+coursesdjango\Scripts\activate.bat
 ```
 4. Затем выйти из папки Scripts, зайти во вложенную папку coursesdjango и выполнить команду в консоли:
 ```bash
