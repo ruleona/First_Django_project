@@ -188,3 +188,10 @@ p.card-text {
     color: #fff;
 
 }
+
+.btn-info:hover {
+    color: #fff;
+    background-color: #087b92;
+    border-color: #087b92;
+
+}

@@ -30,12 +30,10 @@
         <a href="{% url 'contacts' %}">
             <li><i class="fas fa-paper-plane"></i>Контакты</li>
         </a>
-        <a href="{% url 'create' %}">
-            <li>
-                <button class="btn btn-info">Добавить запись</button>
-            </li>
-        </a>
     </ul>
+    <a href="{% url 'create' %}">
+        <button class="btn btn-info">Добавить запись</button>
+    </a>
 </aside>
 <main>
     {% block content %}
