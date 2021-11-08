@@ -3,20 +3,27 @@
 {% block title %}Форма по добавлению статьи{% endblock %}
 
 {% block content %}
-    <div class="features">
-        <h1>Форма по добавлению статьи</h1>
-        <form method="post">
-<!--        У формы не прописываем action, потому что обработка запроса будет происходить на этой же странице-->
-            {% csrf_token %}
-<!--            Прописываем токен, чтобы можно было отправлять форму. Его можно прописать в любом месте внутри формы.-->
-<!--            Для того, чтобы у полей формы появились стили и атрибуты, в документе forms.py добавляется словарь widgets-->
-            {{ form.title }}<br>
-            {{ form.anons }}<br>
-            {{ form.full_text }}<br>
-            {{ form.date }}<br>
-<!--             Выводится, если данные были введены неверно:-->
-            <span>{{ error }}</span>
-            <button class="btn btn-success" type="submit">Добавить статью</button>
-        </form>
-    </div>
+<div class="features">
+    <h1>Форма по добавлению статьи</h1>
+    <form method="post" enctype="multipart/form-data">
+        <!--        У формы не прописываем action, потому что обработка запроса будет происходить на этой же странице-->
+        {% csrf_token %}
+        <!--            Прописываем токен, чтобы можно было отправлять форму. Его можно прописать в любом месте внутри формы.-->
+        <!--            Для того, чтобы у полей формы появились стили и атрибуты, в документе forms.py добавляется словарь widgets-->
+        {{ form.title }}<br>
+        {{ form.anons }}<br>
+        {{ form.full_text }}<br>
+        {{ form.date }}<br>
+        <!--        {{ form.as_p }}-->
+        <button type="submit">Загрузить изображение</button>
+        <!--             Выводится, если данные были введены неверно:-->
+        <span>{{ error }}</span>
+        <button class="btn btn-success" type="submit">Добавить статью</button>
+    </form>
+
+    {% if img_obj %}
+    <h3>Succesfully uploaded : {{img_obj.title}}</h3>
+    <img src="{{ img_obj.image.url}}" alt="connect" style="max-height:300px">
+    {% endif %}
+</div>
 {% endblock %}
