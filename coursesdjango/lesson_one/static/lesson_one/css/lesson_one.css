@@ -123,10 +123,21 @@ form {
 
 .aux-center {
     display: flex;
+    flex-direction: column;
+    width: 85%;
     height: 100%;
     align-items: center;
+    justify-content: center;
 
-    }
+}
+
+.profile-with-photo {
+
+}
+
+.profile-photo {
+    width: 40%;
+}
 
 .contacts-page {
     color: #fff;
