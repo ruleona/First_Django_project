@@ -5,19 +5,20 @@ from django.shortcuts import render
 
 def index(request):
     data = {
-        'title': 'Главная страница',
-        'values': ['Listen', 'to', 'your', 'heart.'],
-        'obj': {'персона': 'человек',
-                'марафон': 'гонка бегунов длиной около 26 миль',
-                'противостоять': 'оставаться сильным, несмотря на давление',
-                'бежать': 'двигаться со скоростью'}
+        'title': 'Главная страница'
     }
     return render(request, 'lesson_one/index.html', data)
 
 
 def about(request):
-    return render(request, 'lesson_one/about.html')
+    data = {
+        'title': 'Обо мне'
+    }
+    return render(request, 'lesson_one/about.html', data)
 
 
 def contacts(request):
-    return render(request, 'lesson_one/contacts.html')
+    data = {
+        'title': 'Контакты'
+    }
+    return render(request, 'lesson_one/contacts.html', data)

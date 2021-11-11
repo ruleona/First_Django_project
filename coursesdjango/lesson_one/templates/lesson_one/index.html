@@ -5,17 +5,17 @@
 {% block content %}
 <div class="aux-center">
     <div class="main-page profile-with-photo">
-        <h1>{{ title }}</h1>
-        <p>Приветствую Вас на моем веб-сайте. Я Junior Python Developer из Нижнего Новгорода. Занимаюсь
-            программированием в течение 1,5 лет. Люблю учиться
-            новому. Ищу работу или стажировку в компании, в которой мои навыки и умения будут полезны, и где можно
-            учиться хорошим практикам в программировании.
-        </p>
+        <div class="main-page-info">
+            <h1>{{ title }}</h1>
+            <p>Приветствую Вас на моем веб-сайте. Я Junior Python Developer из Нижнего Новгорода. Занимаюсь
+                программированием в течение 1,5 лет. Люблю учиться
+                новому. Ищу работу или стажировку в компании, в которой мои навыки и умения будут полезны, и где можно
+                учиться хорошим практикам в программировании.
+            </p>
+            <a href="{% url 'about' %}" class="btn btn-primary">На страницу про меня</a>
+        </div>
         {% load static %}
         <img class="profile-photo" src="{% static 'lesson_one/img/me.jpg' %}" alt="Фото профиля">
     </div>
-    <a href="{% url 'about' %}" class="btn btn-primary">На страницу про меня</a>
+    {% endblock %}
 
-
-</div>
-{% endblock %}
