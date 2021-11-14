@@ -3,28 +3,22 @@
 {% block title %}Новости на сайте{% endblock %}
 
 {% block content %}
-<div class="features">
+<div class="aux-center">
+    <!--    <div class="features">-->
     <h1>Новости на сайте</h1>
     {% if news %}
     {% for el in news %}
     <div class="card w-75">
-        <div class="card-body">
+        <div class="card-body list">
             <h5 class="card-title">{{ el.title }}</h5>
             <p class="card-text">{{ el.anons }}</p>
             <a href="{% url 'news-detail' el.id %}" class="btn btn-primary">Далее</a>
         </div>
     </div>
-
- 
-    <!--    <div class="alert alert-warning">-->
-    <!--        <h3>{{ el.title }}</h3>-->
-    <!--        <p>{{ el.anons }}</p>-->
-    <!--        &lt;!&ndash;                    el.id берет значение id из файлов миграции&ndash;&gt;-->
-    <!--        <a href="{% url 'news-detail' el.id %}" class="btn btn-warning">Далее>></a>-->
-    <!--    </div>-->
     {% endfor %}
     {% else %}
     <p>Пока нет новостей!</p>
     {% endif %}
+    <!--    </div>-->
 </div>
 {% endblock %}
