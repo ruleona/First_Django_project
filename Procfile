@@ -1,1 +1,1 @@
-web: gunicorn coursesdjango.wsgi --log-file -
+web: gunicorn ruleona-first-app.wsgi --log-file -
