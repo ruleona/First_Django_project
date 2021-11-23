@@ -1,2 +1,5 @@
 __pychache__/
 *.pyc
+myenv/
+db.sqlite3
+.env
