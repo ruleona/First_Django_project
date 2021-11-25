@@ -84,27 +84,27 @@ WSGI_APPLICATION = 'coursesdjango.wsgi.application'
 if os.environ.get('DATABASE_URL', None):
     os.environ["DATABASE_URL"] = "postgres://ruleona:1349@localhost:5432/coursesdjango"
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'coursesdjango',
-        'USER': 'ruleona',
-        'PASSWORD': '1349',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
-
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'd30bfc7ra9gap8',
-#         'USER': 'urgkcdzbtoatec',
-#         'PASSWORD': '62fe4d0257645af465e9e4bd2509971d2dbe62fac3f638e6b72f31d844f2fbc7',
-#         'HOST': 'ec2-3-222-183-44.compute-1.amazonaws.com',
+#         'NAME': 'coursesdjango',
+#         'USER': 'ruleona',
+#         'PASSWORD': '1349',
+#         'HOST': 'localhost',
 #         'PORT': '5432',
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd30bfc7ra9gap8',
+        'USER': 'urgkcdzbtoatec',
+        'PASSWORD': '62fe4d0257645af465e9e4bd2509971d2dbe62fac3f638e6b72f31d844f2fbc7',
+        'HOST': 'ec2-3-222-183-44.compute-1.amazonaws.com',
+        'PORT': '5432',
+    }
+}
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
 # Password validation
