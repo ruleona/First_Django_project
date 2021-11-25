@@ -1,1 +1,1 @@
-web: gunicorn coursesdjango.coursesdjango.wsgi
+web: gunicorn --chdir coursesdjango coursesdjango.wsgi
