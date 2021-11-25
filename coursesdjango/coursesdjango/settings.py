@@ -17,7 +17,6 @@ import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 # BASE_DIR = Path(__file__).resolve().parent.parent
-# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
@@ -81,32 +80,36 @@ WSGI_APPLICATION = 'coursesdjango.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-if os.environ.get('DATABASE_URL', None):
-    os.environ["DATABASE_URL"] = "postgres://ruleona:1349@localhost:5432/coursesdjango"
+# if os.environ.get('DATABASE_URL', None):
+#     os.environ["DATABASE_URL"] = "postgres://ruleona:1349@localhost:5432/coursesdjango"
+DATABASE_URL = os.environ['DATABASE_URL']
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'coursesdjango',
+        'USER': 'ruleona',
+        'PASSWORD': '1349',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
 
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'coursesdjango',
-#         'USER': 'ruleona',
-#         'PASSWORD': '1349',
-#         'HOST': 'localhost',
+#         'NAME': 'd30bfc7ra9gap8',
+#         'USER': 'urgkcdzbtoatec',
+#         'PASSWORD': '62fe4d0257645af465e9e4bd2509971d2dbe62fac3f638e6b72f31d844f2fbc7',
+#         'HOST': 'ec2-3-222-183-44.compute-1.amazonaws.com',
 #         'PORT': '5432',
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd30bfc7ra9gap8',
-        'USER': 'urgkcdzbtoatec',
-        'PASSWORD': '62fe4d0257645af465e9e4bd2509971d2dbe62fac3f638e6b72f31d844f2fbc7',
-        'HOST': 'ec2-3-222-183-44.compute-1.amazonaws.com',
-        'PORT': '5432',
-    }
-}
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
+if dj_database_url.config():
+    DATABASES['default'] = dj_database_url.config()
+# db_from_env = dj_database_url.config()
+# DATABASES['default'].update(db_from_env)
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
