@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'coursesdjango.wsgi.application'
 
 # if os.environ.get('DATABASE_URL', None):
 #     os.environ["DATABASE_URL"] = "postgres://ruleona:1349@localhost:5432/coursesdjango"
-DATABASE_URL = os.environ['DATABASE_URL']
+# DATABASE_URL = os.environ['DATABASE_URL']
 
 DATABASES = {
     'default': {
