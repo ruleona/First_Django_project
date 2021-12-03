@@ -16,7 +16,6 @@ import dj_database_url
 # from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-# BASE_DIR = Path(__file__).resolve().parent.parent
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
@@ -26,8 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'django-insecure-(s9ewa90$h_h6arp@!a^ho(jp!_mf@5-s(f!y8lmk)dx9jw(3$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -80,9 +78,6 @@ WSGI_APPLICATION = 'coursesdjango.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# if os.environ.get('DATABASE_URL', None):
-#     os.environ["DATABASE_URL"] = "postgres://ruleona:1349@localhost:5432/coursesdjango"
-# DATABASE_URL = os.environ['DATABASE_URL']
 
 DATABASES = {
     'default': {
@@ -95,21 +90,8 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'd30bfc7ra9gap8',
-#         'USER': 'urgkcdzbtoatec',
-#         'PASSWORD': '62fe4d0257645af465e9e4bd2509971d2dbe62fac3f638e6b72f31d844f2fbc7',
-#         'HOST': 'ec2-3-222-183-44.compute-1.amazonaws.com',
-#         'PORT': '5432',
-#     }
-# }
-
 if dj_database_url.config():
     DATABASES['default'] = dj_database_url.config()
-# db_from_env = dj_database_url.config()
-# DATABASES['default'].update(db_from_env)
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
